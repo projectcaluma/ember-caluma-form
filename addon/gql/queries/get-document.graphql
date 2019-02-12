@@ -1,11 +1,7 @@
 #import 'ember-caluma-form/gql/fragments/form-document'
 
 query($id: ID!) {
-  allDocuments(id: $id) {
-    edges {
-      node {
-        ...FormDocument
-      }
-    }
+  node(id: $id) {
+    ...FormDocument
   }
 }

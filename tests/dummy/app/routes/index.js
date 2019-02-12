@@ -3,6 +3,7 @@ import { inject as service } from "@ember/service";
 import { get } from "@ember/object";
 import { RouteQueryManager } from "ember-apollo-client";
 import gql from "graphql-tag";
+import { atob } from "ember-caluma-utils/helpers/atob";
 
 export default Route.extend(RouteQueryManager, {
   apollo: service(),
@@ -25,6 +26,6 @@ export default Route.extend(RouteQueryManager, {
       "allDocuments.edges"
     );
 
-    return get(res, "firstObject.node");
+    return atob(get(res, "firstObject.node.id"));
   }
 });

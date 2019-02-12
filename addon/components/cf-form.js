@@ -33,10 +33,10 @@ export default Component.extend(ComponentQueryManager, {
     return yield this.apollo.watchQuery(
       {
         query: getDocumentQuery,
-        variables: { id: this.documentId },
+        variables: { id: window.btoa("Document:" + this.documentId) },
         fetchPolicy: "network-only"
       },
-      "allDocuments.edges"
+      "node"
     );
   }),
 
@@ -49,9 +49,7 @@ export default Component.extend(ComponentQueryManager, {
   document: computed("data.lastSuccessful.value", function() {
     return (
       this.get("data.lastSuccessful.value") &&
-      this.documentStore.find(
-        this.get("data.lastSuccessful.value.firstObject.node")
-      )
+      this.documentStore.find(this.get("data.lastSuccessful.value"))
     );
   }).readOnly()
 });
