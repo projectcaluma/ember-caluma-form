@@ -97,7 +97,7 @@ export default EmberObject.extend({
   /**
    * The ID of the field. Consists of the document ID and the question slug.
    *
-   * E.g: `Document:5:Question:some-question`
+   * E.g: `Document:b01e9071-c63a-43a5-8c88-2daa7b02e411:Question:some-question-slug`
    *
    * @property {String} id
    * @accessor

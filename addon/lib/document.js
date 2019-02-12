@@ -1,10 +1,10 @@
 import EmberObject, { computed } from "@ember/object";
-import { reads } from "@ember/object/computed";
 import { assert } from "@ember/debug";
 import { getOwner } from "@ember/application";
 import Evented, { on } from "@ember/object/evented";
 import Field from "ember-caluma-form/lib/field";
 import jexl from "jexl";
+import { atob } from "ember-caluma-utils/helpers/atob";
 
 /**
  * Object which represents a document
@@ -36,7 +36,9 @@ export default EmberObject.extend(Evented, {
     }
   },
 
-  id: reads("raw.id"),
+  id: computed("raw.id", function() {
+    return atob(this.get("raw.id"));
+  }),
 
   questionJexl: computed(function() {
     const questionJexl = new jexl.Jexl();
