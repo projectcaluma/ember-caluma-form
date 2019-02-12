@@ -30,11 +30,11 @@ module("Integration | Component | cf-form", function(hooks) {
       }),
       this.server.create("question", {
         formIds: [form.id],
-        type: "RADIO"
+        type: "CHOICE"
       }),
       this.server.create("question", {
         formIds: [form.id],
-        type: "CHECKBOX"
+        type: "MULTIPLE_CHOICE"
       })
     ];
 
@@ -63,9 +63,9 @@ module("Integration | Component | cf-form", function(hooks) {
         documentId: this.document.id
       });
 
-      if (question.type === "RADIO") {
+      if (question.type === "CHOICE") {
         assert.dom(`[name="${id}"][value="${answer.value}"]`).isChecked();
-      } else if (question.type === "CHECKBOX") {
+      } else if (question.type === "MULTIPLE_CHOICE") {
         answer.value.forEach(v => {
           assert.dom(`[name="${id}"][value="${v}"]`).isChecked();
         });
@@ -84,7 +84,7 @@ module("Integration | Component | cf-form", function(hooks) {
         questionIds.includes(question.id)
       );
 
-      if (["RADIO", "CHECKBOX"].includes(question.type)) {
+      if (["CHOICE", "MULTIPLE_CHOICE"].includes(question.type)) {
         options.forEach(({ slug }) => {
           assert.dom(`[name="${id}"][value="${slug}"]`).isDisabled();
         });
@@ -126,12 +126,12 @@ module("Integration | Component | cf-form", function(hooks) {
     const radioQuestion = this.server.create("question", {
       formIds: [form.id],
       slug: "radio-question",
-      type: "RADIO"
+      type: "CHOICE"
     });
     const checkboxQuestion = this.server.create("question", {
       formIds: [form.id],
       slug: "checkbox-question",
-      type: "CHECKBOX"
+      type: "MULTIPLE_CHOICE"
     });
 
     radioQuestion.options.models.forEach((option, i) => {

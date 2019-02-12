@@ -21,8 +21,8 @@ const TYPE_MAP = {
   TextareaQuestion: "StringAnswer",
   IntegerQuestion: "IntegerAnswer",
   FloatQuestion: "FloatAnswer",
-  CheckboxQuestion: "ListAnswer",
-  RadioQuestion: "StringAnswer"
+  MultipleChoiceQuestion: "ListAnswer",
+  ChoiceQuestion: "StringAnswer"
 };
 
 /**
@@ -265,13 +265,13 @@ export default EmberObject.extend({
    * Method to validate a radio question. This checks if the value is included
    * in the provided options of the question.
    *
-   * @method _validateRadioQuestion
+   * @method _validateChoiceQuestion
    * @return {Object|Boolean} Returns an object if invalid or true if valid
    * @internal
    */
-  _validateRadioQuestion() {
+  _validateChoiceQuestion() {
     return validate("inclusion", this.get("answer.value"), {
-      in: this.get("question.radioOptions.edges").map(
+      in: this.get("question.choiceOptions.edges").map(
         option => option.node.slug
       )
     });
@@ -281,14 +281,14 @@ export default EmberObject.extend({
    * Method to validate a checkbox question. This checks if the all of the
    * values are included in the provided options of the question.
    *
-   * @method _validateCheckboxQuestion
+   * @method _validateMultipleChoiceQuestion
    * @return {Object[]|Boolean[]|Mixed[]} Returns per value an object if invalid or true if valid
    * @internal
    */
-  _validateCheckboxQuestion() {
+  _validateMultipleChoiceQuestion() {
     return this.get("answer.value").map(value =>
       validate("inclusion", value, {
-        in: this.get("question.checkboxOptions.edges").map(
+        in: this.get("question.multipleChoiceOptions.edges").map(
           option => option.node.slug
         )
       })
