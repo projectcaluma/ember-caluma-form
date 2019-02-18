@@ -26,7 +26,7 @@
     "ember-apollo-client": "2.0.0-beta.1",
     "ember-auto-import": "1.2.15",
     "ember-caluma-utils": "projectcaluma/ember-caluma-utils#master",
-    "ember-cli-babel": "6.17.2",
+    "ember-cli-babel": "6.18.0",
     "ember-cli-htmlbars": "3.0.1",
     "ember-cli-sass": "8.0.1",
     "ember-composable-helpers": "2.1.0",
