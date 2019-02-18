@@ -17,8 +17,8 @@ fragment FieldQuestion on Question {
     floatMinValue: minValue
     floatMaxValue: maxValue
   }
-  ... on RadioQuestion {
-    radioOptions: options {
+  ... on ChoiceQuestion {
+    choiceOptions: options {
       edges {
         node {
           slug
@@ -27,8 +27,8 @@ fragment FieldQuestion on Question {
       }
     }
   }
-  ... on CheckboxQuestion {
-    checkboxOptions: options {
+  ... on MultipleChoiceQuestion {
+    multipleChoiceOptions: options {
       edges {
         node {
           slug

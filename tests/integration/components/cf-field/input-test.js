@@ -96,7 +96,7 @@ module("Integration | Component | cf-field/input", function(hooks) {
         onSave=noop
         field=(hash
           question=(hash
-            radioOptions=(hash
+            choiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1"))
               )
@@ -121,7 +121,7 @@ module("Integration | Component | cf-field/input", function(hooks) {
       {{cf-field/input
         field=(hash
           question=(hash
-            checkboxOptions=(hash
+            multipleChoiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1"))
               )

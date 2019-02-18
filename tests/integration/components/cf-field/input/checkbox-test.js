@@ -17,7 +17,7 @@ module("Integration | Component | cf-field/input/checkbox", function(hooks) {
             listValue=(array "option-1" "option-2")
           )
           question=(hash
-            checkboxOptions=(hash
+            multipleChoiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1" label="Option 1"))
                 (hash node=(hash slug="option-2" label="Option 2"))
@@ -60,7 +60,7 @@ module("Integration | Component | cf-field/input/checkbox", function(hooks) {
         disabled=true
         field=(hash
           question=(hash
-            checkboxOptions=(hash
+            multipleChoiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1" label="Option 1"))
                 (hash node=(hash slug="option-2" label="Option 2"))
@@ -91,7 +91,7 @@ module("Integration | Component | cf-field/input/checkbox", function(hooks) {
             listValue=listValue
           )
           question=(hash
-            checkboxOptions=(hash
+            multipleChoiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1" label="Option 1"))
                 (hash node=(hash slug="option-2" label="Option 2"))

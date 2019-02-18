@@ -2,6 +2,7 @@ import Service from "@ember/service";
 import { computed } from "@ember/object";
 import { getOwner } from "@ember/application";
 import Document from "ember-caluma-form/lib/document";
+import { atob } from "ember-caluma-utils/helpers/atob";
 
 /**
  * @class DocumentStoreService
@@ -24,7 +25,7 @@ export default Service.extend({
    * @return {Document} The document
    */
   find(document) {
-    const cached = this.documents.find(doc => doc.id === document.id);
+    const cached = this.documents.find(doc => doc.id === atob(document.id));
 
     if (!cached) {
       this.documents.push(this._build(document));

@@ -6,7 +6,7 @@ module("Unit | Service | document-store", function(hooks) {
 
   hooks.beforeEach(function() {
     this.document = {
-      id: 1,
+      id: btoa("Document:1"),
       answers: {
         edges: [
           {

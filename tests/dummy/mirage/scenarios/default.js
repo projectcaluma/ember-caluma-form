@@ -37,7 +37,7 @@ export default function(server) {
   server.create("question", {
     slug: "like-caluma",
     label: "Do you like Caluma?",
-    type: "RADIO",
+    type: "CHOICE",
     formIds: [form.id],
     options: [
       server.create("option", { label: "Yes" }),
@@ -48,7 +48,7 @@ export default function(server) {
     slug: "short-reason",
     label: "Why so short?",
     formIds: [form.id],
-    type: "CHECKBOX",
+    type: "MULTIPLE_CHOICE",
     isHidden: "'height'|answer > 1.6",
     options: [
       server.create("option", { label: "Moms fault" }),

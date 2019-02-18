@@ -22,7 +22,7 @@ module("Integration | Component | cf-field/input/radio", function(hooks) {
             stringValue="option-1"
           )
           question=(hash
-            radioOptions=(hash
+            choiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1" label="Option 1"))
                 (hash node=(hash slug="option-2" label="Option 2"))
@@ -59,7 +59,7 @@ module("Integration | Component | cf-field/input/radio", function(hooks) {
         disabled=true
         field=(hash
           question=(hash
-            radioOptions=(hash
+            choiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1" label="Option 1"))
                 (hash node=(hash slug="option-2" label="Option 2"))
@@ -86,7 +86,7 @@ module("Integration | Component | cf-field/input/radio", function(hooks) {
         onSave=save
         field=(hash
           question=(hash
-            radioOptions=(hash
+            choiceOptions=(hash
               edges=(array
                 (hash node=(hash slug="option-1" label="Option 1"))
               )

@@ -237,7 +237,7 @@ module("Unit | Library | field", function(hooks) {
       const field = Field.create(this.owner.ownerInjection(), {
         _question: {
           isRequired: "true",
-          radioOptions: {
+          choiceOptions: {
             edges: [
               {
                 node: {
@@ -246,7 +246,7 @@ module("Unit | Library | field", function(hooks) {
               }
             ]
           },
-          __typename: "RadioQuestion"
+          __typename: "ChoiceQuestion"
         },
         _document: {},
         _answer: {
@@ -272,7 +272,7 @@ module("Unit | Library | field", function(hooks) {
       const field = Field.create(this.owner.ownerInjection(), {
         _question: {
           isRequired: "true",
-          checkboxOptions: {
+          multipleChoiceOptions: {
             edges: [
               {
                 node: {
@@ -281,7 +281,7 @@ module("Unit | Library | field", function(hooks) {
               }
             ]
           },
-          __typename: "CheckboxQuestion"
+          __typename: "MultipleChoiceQuestion"
         },
         _document: {},
         _answer: {

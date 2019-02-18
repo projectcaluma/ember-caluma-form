@@ -10,7 +10,7 @@ module("Integration | Component | cf-field", function(hooks) {
   hooks.beforeEach(function() {
     const document = Document.create(this.owner.ownerInjection(), {
       raw: {
-        id: 1,
+        id: window.btoa("Document:1"),
         answers: {
           edges: [
             {
