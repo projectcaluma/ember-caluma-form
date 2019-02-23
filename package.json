@@ -36,7 +36,7 @@
     "ember-promise-helpers": "1.0.6",
     "ember-validators": "1.2.1",
     "jexl": "1.1.4",
-    "sass": "1.14.3"
+    "sass": "1.17.2"
   },
   "devDependencies": {
     "@ember/optional-features": "0.7.0",
