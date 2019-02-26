@@ -1,3 +1,7 @@
+# ⚠ Deprecation warning
+
+This addon is deprecated, since it has been integrated in [ember-caluma](https://github.com/projectcaluma/ember-caluma).
+
 # ember-caluma-form
 
 [![Build Status](https://travis-ci.com/projectcaluma/ember-caluma-form.svg?branch=master)](https://travis-ci.com/projectcaluma/ember-caluma-form)
